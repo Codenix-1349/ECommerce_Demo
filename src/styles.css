@@ -177,7 +177,6 @@ button {
   z-index: 5;
 }
 
-/* default values; position overridden by .popover-right / .popover-left */
 .popover {
   width: 320px;
   position: absolute;
@@ -195,20 +194,16 @@ button {
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* show on hover/focus */
-.card-popover:hover .popover,
-.card-popover:focus-within .popover {
+/* ONLY hover shows popover (prevents "sticky" after clicking buttons) */
+.card-popover:hover .popover {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* place to the RIGHT of the card */
 .popover-right .popover {
   left: calc(100% + 12px);
   right: auto;
 }
-
-/* place to the LEFT of the card */
 .popover-left .popover {
   right: calc(100% + 12px);
   left: auto;
@@ -244,7 +239,6 @@ button {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 .popover-row {
   display: flex;
   justify-content: space-between;
@@ -295,4 +289,32 @@ th {
   padding: 28px 0;
   color: #475569;
   font-weight: 600;
+}
+
+/* Cart image popover */
+.cart-img-popover {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+.cart-img-popover:hover {
+  z-index: 5;
+}
+
+/* show popover only on hover (no sticky focus behavior) */
+.cart-img-popover:hover .popover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* align popover to the side of the image */
+.cart-popover-right .popover {
+  left: calc(100% + 12px);
+  right: auto;
+  top: 0;
+}
+.cart-popover-left .popover {
+  right: calc(100% + 12px);
+  left: auto;
+  top: 0;
 }

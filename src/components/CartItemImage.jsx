@@ -1,16 +1,11 @@
-import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { formatEUR } from "../utils/format.js";
 
-const ProductCard = ({ product, quantityInCart, onAdd, onRemove }) => {
-  const ratingRate = product?.rating?.rate;
-  const ratingCount = product?.rating?.count;
-
-  const cardRef = useRef(null);
+const CartItemImage = ({ product }) => {
+  const wrapRef = useRef(null);
   const [side, setSide] = useState("right"); // 'right' | 'left'
 
   const chooseSide = () => {
-    const el = cardRef.current;
+    const el = wrapRef.current;
     if (!el) return;
 
     const rect = el.getBoundingClientRect();
@@ -35,30 +30,16 @@ const ProductCard = ({ product, quantityInCart, onAdd, onRemove }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const ratingRate = product?.rating?.rate;
+  const ratingCount = product?.rating?.count;
+
   return (
     <div
-      ref={cardRef}
-      className={`card card-popover ${side === "left" ? "popover-left" : "popover-right"}`}
+      ref={wrapRef}
+      className={`cart-img-popover ${side === "left" ? "cart-popover-left" : "cart-popover-right"}`}
       onMouseEnter={chooseSide}
     >
-      <div className="imgwrap">
-        <img src={product.image} alt={product.title} loading="lazy" />
-      </div>
-
-      <div className="title" title={product.title}>
-        {product.title}
-      </div>
-
-      <div className="meta">
-        <div className="price">{formatEUR(product.price)}</div>
-
-        <Link
-          className="category"
-          to={`/category/${encodeURIComponent(product.category)}`}
-        >
-          {product.category}
-        </Link>
-      </div>
+      <img className="rowimg" src={product.image} alt={product.title} />
 
       <div className="popover" role="tooltip" aria-hidden="true">
         <div className="popover-title">Details</div>
@@ -79,24 +60,8 @@ const ProductCard = ({ product, quantityInCart, onAdd, onRemove }) => {
           </div>
         )}
       </div>
-
-      {quantityInCart > 0 ? (
-        <div className="actions">
-          <button className="btn-light" onClick={() => onRemove(product.id)}>
-            -
-          </button>
-          <span className="qty">{quantityInCart}</span>
-          <button className="btn-primary" onClick={() => onAdd(product)}>
-            +
-          </button>
-        </div>
-      ) : (
-        <button className="btn-primary" onClick={() => onAdd(product)}>
-          Add to cart
-        </button>
-      )}
     </div>
   );
 };
 
-export default ProductCard;
+export default CartItemImage;

@@ -1,64 +1,77 @@
-import { useMemo } from 'react'
-import { useOutletContext } from 'react-router-dom'
-import { formatEUR } from '../utils/format.js'
-import { getCartLines, getCartTotal } from '../utils/cart.js'
+import { useMemo } from "react";
+import { useOutletContext } from "react-router-dom";
+import { formatEUR } from "../utils/format.js";
+import CartItemImage from "../components/CartItemImage.jsx";
 
 const Cart = () => {
-  const { cart, actions } = useOutletContext()
+  const { cart, actions } = useOutletContext();
 
-  const lines = useMemo(() => getCartLines(cart), [cart])
-  const total = useMemo(() => getCartTotal(cart), [cart])
+  const items = useMemo(() => {
+    return Object.values(cart || {});
+  }, [cart]);
 
-  if (lines.length === 0) return <div className="empty">Your cart is empty.</div>
+  const total = useMemo(() => {
+    return items.reduce((sum, it) => sum + it.product.price * it.quantity, 0);
+  }, [items]);
+
+  if (!items.length) {
+    return <div className="empty">Cart is empty.</div>;
+  }
 
   return (
     <>
       <table>
         <thead>
           <tr>
-            <th>Product</th>
+            <th>Item</th>
+            <th>Title</th>
             <th>Price</th>
             <th>Qty</th>
             <th>Line</th>
-            <th>Actions</th>
           </tr>
         </thead>
+
         <tbody>
-          {lines.map(({ product, quantity }) => {
-            const lineTotal = Number(product.price) * Number(quantity)
-            return (
-              <tr key={product.id}>
-                <td>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <img className="rowimg" src={product.image} alt={product.title} />
-                    <div style={{ fontWeight: 700, fontSize: 13 }}>{product.title}</div>
-                  </div>
-                </td>
-                <td>{formatEUR(product.price)}</td>
-                <td>{quantity}</td>
-                <td>{formatEUR(lineTotal)}</td>
-                <td>
-                  <div className="actions">
-                    <button className="btn-light" onClick={() => actions.remove(product.id)}>
-                      -
-                    </button>
-                    <button className="btn-primary" onClick={() => actions.add(product)}>
-                      +
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            )
-          })}
+          {items.map(({ product, quantity }) => (
+            <tr key={product.id}>
+              <td>
+                <CartItemImage product={product} />
+              </td>
+
+              <td>{product.title}</td>
+
+              <td>{formatEUR(product.price)}</td>
+
+              <td>
+                <div className="actions">
+                  <button
+                    className="btn-light"
+                    onClick={() => actions.remove(product.id)}
+                  >
+                    -
+                  </button>
+                  <span className="qty">{quantity}</span>
+                  <button
+                    className="btn-primary"
+                    onClick={() => actions.add(product)}
+                  >
+                    +
+                  </button>
+                </div>
+              </td>
+
+              <td>{formatEUR(product.price * quantity)}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       <div className="total">
-        <div>Total:</div>
-        <div>{formatEUR(total)}</div>
+        <span>Total</span>
+        <span>{formatEUR(total)}</span>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

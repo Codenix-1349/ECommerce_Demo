@@ -1,8 +1,7 @@
-import { formatEUR } from '../utils/format.js'
+import { Link } from "react-router-dom";
+import { formatEUR } from "../utils/format.js";
 
 const ProductCard = ({ product, quantityInCart, onAdd, onRemove }) => {
-  const categoryUrl = `https://fakestoreapi.com/products/category/${encodeURIComponent(product.category)}`
-
   return (
     <div className="card">
       <div className="imgwrap">
@@ -15,9 +14,13 @@ const ProductCard = ({ product, quantityInCart, onAdd, onRemove }) => {
 
       <div className="meta">
         <div className="price">{formatEUR(product.price)}</div>
-        <a className="category" href={categoryUrl} target="_blank" rel="noreferrer">
+
+        <Link
+          className="category"
+          to={`/category/${encodeURIComponent(product.category)}`}
+        >
           {product.category}
-        </a>
+        </Link>
       </div>
 
       {quantityInCart > 0 ? (
@@ -36,7 +39,7 @@ const ProductCard = ({ product, quantityInCart, onAdd, onRemove }) => {
         </button>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

@@ -1,13 +1,19 @@
+import { Link } from "react-router-dom";
+
 const CategoryList = ({ categories }) => {
   return (
     <div className="categories">
       {categories.map((c) => (
-        <span className="chip" key={c}>
+        <Link
+          className="chip"
+          key={c}
+          to={`/category/${encodeURIComponent(c)}`}
+        >
           {c}
-        </span>
+        </Link>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default CategoryList
+export default CategoryList;

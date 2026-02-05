@@ -235,6 +235,7 @@ button {
   color: #111;
   line-height: 1.35;
   display: -webkit-box;
+  line-clamp: 8;
   -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;

@@ -6,13 +6,16 @@ import CartItemImage from "../components/CartItemImage.jsx";
 const Cart = () => {
   const { cart, actions } = useOutletContext();
 
-  const items = useMemo(() => {
-    return Object.values(cart || {});
-  }, [cart]);
+  const items = useMemo(() => Object.values(cart || {}), [cart]);
 
   const total = useMemo(() => {
     return items.reduce((sum, it) => sum + it.product.price * it.quantity, 0);
   }, [items]);
+
+  const handleCheckout = () => {
+    // Simple redirect (demo). Not a real payment.
+    window.open("https://www.paypal.com/", "_blank", "noopener,noreferrer");
+  };
 
   if (!items.length) {
     return <div className="empty">Cart is empty.</div>;
@@ -69,6 +72,18 @@ const Cart = () => {
       <div className="total">
         <span>Total</span>
         <span>{formatEUR(total)}</span>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          paddingBottom: 28,
+        }}
+      >
+        <button className="btn-primary" onClick={handleCheckout}>
+          Jetzt kaufen (PayPal)
+        </button>
       </div>
     </>
   );

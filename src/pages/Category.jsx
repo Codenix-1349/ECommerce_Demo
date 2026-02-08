@@ -39,16 +39,16 @@ const Category = () => {
   }, [cart]);
 
   if (error) {
-    return <div className="empty">{error}</div>;
+    return <div className="text-center p-8 text-error font-bold">{error}</div>;
   }
 
   return (
     <>
-      <div style={{ paddingTop: 16, fontWeight: 900, fontSize: 16 }}>
-        Category: {decodedCategory}
+      <div className="text-2xl font-bold my-6 capitalize">
+        Category: <span className="text-primary">{decodedCategory}</span>
       </div>
 
-      <div className="grid">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-8">
         {products.map((p) => (
           <ProductCard
             key={p.id}

@@ -37,13 +37,14 @@ const Home = () => {
     return map
   }, [cart])
 
-  if (error) return <div className="empty">{error}</div>
+  if (error) return <div className="text-center p-8 text-error font-bold">{error}</div>
 
   return (
     <>
       <CategoryList categories={categories} />
 
-      <div className="grid">
+      <h2 className="text-2xl font-bold my-6">All Products</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-8">
         {products.map((p) => (
           <ProductCard
             key={p.id}

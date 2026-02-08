@@ -36,26 +36,37 @@ const CartItemImage = ({ product }) => {
   return (
     <div
       ref={wrapRef}
-      className={`cart-img-popover ${side === "left" ? "cart-popover-left" : "cart-popover-right"}`}
+      className="relative group inline-block"
       onMouseEnter={chooseSide}
     >
-      <img className="rowimg" src={product.image} alt={product.title} />
+      <div className="avatar">
+        <div className="w-12 h-12 mask mask-squircle bg-white p-1 border border-base-200">
+          <img className="object-contain w-full h-full" src={product.image} alt={product.title} />
+        </div>
+      </div>
 
-      <div className="popover" role="tooltip" aria-hidden="true">
-        <div className="popover-title">Details</div>
+      <div 
+        className={`absolute top-0 z-[100] w-72 bg-base-100 border border-base-300 shadow-2xl rounded-box p-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 pointer-events-none
+        ${side === 'left' ? 'right-full mr-2' : 'left-full ml-2'}
+        `}
+        role="tooltip" 
+        aria-hidden="true"
+      >
+        <h3 className="font-bold text-sm mb-2 text-base-content">{product.title}</h3>
 
-        <div className="popover-section">
-          <div className="popover-label">Description</div>
-          <div className="popover-text">{product.description}</div>
+        <div className="mb-3">
+          <div className="text-[10px] font-bold uppercase text-base-content/60 mb-1">Description</div>
+          <p className="text-xs text-base-content line-clamp-4">{product.description}</p>
         </div>
 
         {(typeof ratingRate === "number" ||
           typeof ratingCount === "number") && (
-          <div className="popover-row">
-            <div className="popover-label">Rating</div>
-            <div className="popover-value">
-              {typeof ratingRate === "number" ? ratingRate.toFixed(1) : "-"} / 5
-              {typeof ratingCount === "number" ? ` (${ratingCount})` : ""}
+          <div className="flex items-center justify-between bg-base-200/50 p-2 rounded">
+            <span className="text-[10px] font-bold uppercase text-base-content/70">Rating</span>
+            <div className="flex items-center gap-1 font-mono text-xs">
+                <span className="text-warning">★</span>
+              <span>{typeof ratingRate === "number" ? ratingRate.toFixed(1) : "-"}</span>
+               <span className="text-base-content/50">/ 5</span>
             </div>
           </div>
         )}

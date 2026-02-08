@@ -36,65 +36,78 @@ const ProductCard = ({ product, quantityInCart, onAdd, onRemove }) => {
   }, []);
 
   return (
-    <div
+    <div 
       ref={cardRef}
-      className={`card card-popover ${side === "left" ? "popover-left" : "popover-right"}`}
+      className={`relative card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-200 border border-base-200 group`}
       onMouseEnter={chooseSide}
     >
-      <div className="imgwrap">
-        <img src={product.image} alt={product.title} loading="lazy" />
+      <figure className="px-4 pt-4 h-48 bg-white flex items-center justify-center">
+        <img 
+          src={product.image} 
+          alt={product.title} 
+          className="max-h-40 w-auto object-contain"
+          loading="lazy" 
+        />
+      </figure>
+      <div className="card-body p-4">
+        <h2 className="card-title text-sm h-10 overflow-hidden text-ellipsis line-clamp-2" title={product.title}>
+          {product.title}
+        </h2>
+        
+        <div className="flex justify-between items-center mt-2">
+          <div className="font-bold text-lg text-primary">{formatEUR(product.price)}</div>
+          <Link
+            className="badge badge-outline text-xs"
+            to={`/category/${encodeURIComponent(product.category)}`}
+          >
+            {product.category}
+          </Link>
+        </div>
+
+        <div className="card-actions justify-end mt-4">
+          {quantityInCart > 0 ? (
+             <div className="join">
+                <button className="join-item btn btn-sm" onClick={() => onRemove(product.id)}>-</button>
+                <button className="join-item btn btn-sm btn-disabled text-base-content font-bold">{quantityInCart}</button>
+                <button className="join-item btn btn-sm btn-primary" onClick={() => onAdd(product)}>+</button>
+             </div>
+          ) : (
+            <button className="btn btn-primary btn-sm w-full" onClick={() => onAdd(product)}>
+              Add to cart
+            </button>
+          )}
+        </div>
       </div>
 
-      <div className="title" title={product.title}>
-        {product.title}
-      </div>
-
-      <div className="meta">
-        <div className="price">{formatEUR(product.price)}</div>
-
-        <Link
-          className="category"
-          to={`/category/${encodeURIComponent(product.category)}`}
+        {/* Popover */}
+        <div 
+            className={`absolute top-0 z-50 w-80 bg-base-100 border border-base-300 shadow-2xl rounded-box p-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto
+            ${side === 'left' ? 'right-full mr-2' : 'left-full ml-2'}
+            `}
+            role="tooltip" 
+            aria-hidden="true"
         >
-          {product.category}
-        </Link>
-      </div>
-
-      <div className="popover" role="tooltip" aria-hidden="true">
-        <div className="popover-title">Details</div>
-
-        <div className="popover-section">
-          <div className="popover-label">Description</div>
-          <div className="popover-text">{product.description}</div>
-        </div>
-
-        {(typeof ratingRate === "number" ||
-          typeof ratingCount === "number") && (
-          <div className="popover-row">
-            <div className="popover-label">Rating</div>
-            <div className="popover-value">
-              {typeof ratingRate === "number" ? ratingRate.toFixed(1) : "-"} / 5
-              {typeof ratingCount === "number" ? ` (${ratingCount})` : ""}
+            <h3 className="font-bold text-lg mb-2 text-base-content">{product.title}</h3>
+            
+            <div className="mb-4">
+                <div className="text-xs font-semibold uppercase text-base-content/60 mb-1">Description</div>
+                <p className="text-sm text-base-content line-clamp-6">{product.description}</p>
             </div>
-          </div>
-        )}
-      </div>
 
-      {quantityInCart > 0 ? (
-        <div className="actions">
-          <button className="btn-light" onClick={() => onRemove(product.id)}>
-            -
-          </button>
-          <span className="qty">{quantityInCart}</span>
-          <button className="btn-primary" onClick={() => onAdd(product)}>
-            +
-          </button>
+            {(typeof ratingRate === "number" || typeof ratingCount === "number") && (
+                <div className="flex items-center justify-between bg-base-200/50 p-2 rounded-lg">
+                    <span className="text-xs font-bold uppercase text-base-content/70">Rating</span>
+                    <div className="flex items-center gap-1 font-mono text-sm">
+                        <span className="text-warning">★</span>
+                        <span>{typeof ratingRate === "number" ? ratingRate.toFixed(1) : "-"}</span>
+                        <span className="text-base-content/50">/ 5</span>
+                        <span className="text-xs text-base-content/50 ml-1">
+                             {typeof ratingCount === "number" ? `(${ratingCount})` : ""}
+                        </span>
+                    </div>
+                </div>
+            )}
         </div>
-      ) : (
-        <button className="btn-primary" onClick={() => onAdd(product)}>
-          Add to cart
-        </button>
-      )}
     </div>
   );
 };

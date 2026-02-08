@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const CategoryList = ({ categories }) => {
   return (
-    <div className="categories">
+    <div className="flex flex-wrap gap-2 py-4">
       {categories.map((c) => (
         <Link
-          className="chip"
+          className="btn btn-sm btn-outline rounded-full normal-case"
           key={c}
           to={`/category/${encodeURIComponent(c)}`}
         >

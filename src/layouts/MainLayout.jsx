@@ -27,20 +27,25 @@ const MainLayout = () => {
 
   return (
     <>
-      <header className="nav">
-        <div className="container nav-inner">
-          <div className="brand">SuperDuper eCommerce Seite</div>
-          <nav className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/cart">
-              Cart <span className="badge">{cartCount}</span>
+      <header className="navbar bg-primary text-primary-content sticky top-0 z-50 shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex-1">
+             <Link to="/" className="btn btn-ghost text-xl font-bold tracking-tight normal-case">SuperDuper eCommerce Seite</Link>
+          </div>
+          <div className="flex-none gap-2">
+            <Link to="/" className="btn btn-ghost btn-sm">Home</Link>
+            <Link to="/cart" className="btn btn-ghost btn-sm relative">
+              Cart 
+              {cartCount > 0 && (
+                  <span className="badge badge-sm badge-secondary ml-1 indicator-item">{cartCount}</span>
+              )}
             </Link>
             <ThemeToggle />
-          </nav>
+          </div>
         </div>
       </header>
 
-      <main className="container">
+      <main className="container mx-auto px-4 py-6">
         <Outlet context={{ cart, setCart, actions }} />
       </main>
     </>

@@ -18,12 +18,12 @@ const Cart = () => {
   };
 
   if (!items.length) {
-    return <div className="empty">Cart is empty.</div>;
+    return <div className="text-center p-8 text-neutral-content font-semibold">Cart is empty.</div>;
   }
 
   return (
-    <>
-      <table>
+    <div className="overflow-visible">
+      <table className="table table-zebra w-full mb-8">
         <thead>
           <tr>
             <th>Item</th>
@@ -41,21 +41,21 @@ const Cart = () => {
                 <CartItemImage product={product} />
               </td>
 
-              <td>{product.title}</td>
+              <td className="font-medium">{product.title}</td>
 
-              <td>{formatEUR(product.price)}</td>
+              <td className="font-mono">{formatEUR(product.price)}</td>
 
               <td>
-                <div className="actions">
+                <div className="join">
                   <button
-                    className="btn-light"
+                    className="join-item btn btn-xs"
                     onClick={() => actions.remove(product.id)}
                   >
                     -
                   </button>
-                  <span className="qty">{quantity}</span>
+                  <button className="join-item btn btn-xs btn-disabled text-base-content font-bold">{quantity}</button>
                   <button
-                    className="btn-primary"
+                    className="join-item btn btn-xs btn-primary"
                     onClick={() => actions.add(product)}
                   >
                     +
@@ -63,29 +63,21 @@ const Cart = () => {
                 </div>
               </td>
 
-              <td>{formatEUR(product.price * quantity)}</td>
+              <td className="font-bold font-mono text-primary">{formatEUR(product.price * quantity)}</td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      <div className="total">
-        <span>Total</span>
-        <span>{formatEUR(total)}</span>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          paddingBottom: 28,
-        }}
-      >
-        <button className="btn-primary" onClick={handleCheckout}>
+      <div className="flex flex-col items-end gap-4 mb-8">
+        <div className="text-2xl font-bold">
+          Total: <span className="text-primary">{formatEUR(total)}</span>
+        </div>
+        <button className="btn btn-primary btn-wide" onClick={handleCheckout}>
           Jetzt kaufen (PayPal)
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

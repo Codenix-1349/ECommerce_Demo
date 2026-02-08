@@ -7,6 +7,7 @@ import {
   addToCart,
   removeFromCart,
 } from "../utils/cart.js";
+import ThemeToggle from "../components/ThemeToggle.jsx";
 
 const MainLayout = () => {
   const [cart, setCart] = useState(() => loadCart());
@@ -28,12 +29,13 @@ const MainLayout = () => {
     <>
       <header className="nav">
         <div className="container nav-inner">
-          <div className="brand">SuperDuper eCommerce Seite*bämmm*</div>
+          <div className="brand">SuperDuper eCommerce Seite</div>
           <nav className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/cart">
               Cart <span className="badge">{cartCount}</span>
             </Link>
+            <ThemeToggle />
           </nav>
         </div>
       </header>

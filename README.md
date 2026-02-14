@@ -25,18 +25,29 @@
 
 <table>
   <tr>
-    <td><b>Home / Product Overview</b><br/>Categories + Product Grid</td>
-    <td><b>Cart</b><br/>Qty Controls + Line Totals + Total</td>
+    <td><b>🏠 Home</b><br/><i>Product Overview</i></td>
+    <td><b>🛒 Cart</b><br/><i>Dynamic Totals</i></td>
+    <td><b>🌙 Dark Mode</b><br/><i>Theming</i></td>
   </tr>
   <tr>
     <td>
-      <img width="900" alt="Home - Product overview" src="https://github.com/user-attachments/assets/1c2e6f05-77f0-4978-9926-309484362c5e" />
+      <img width="420"
+           alt="Home - Product overview"
+           src="https://github.com/user-attachments/assets/1c2e6f05-77f0-4978-9926-309484362c5e" />
     </td>
     <td>
-      <img width="900" alt="Cart" src="https://github.com/user-attachments/assets/292d225f-bfb2-4b54-816f-d457feaf39fb" />
+      <img width="420"
+           alt="Cart"
+           src="https://github.com/user-attachments/assets/292d225f-bfb2-4b54-816f-d457feaf39fb" />
+    </td>
+    <td>
+      <img width="420"
+           alt="Dark Mode UI"
+           src="https://github.com/user-attachments/assets/d2d14c45-1dd6-4351-9aec-eb0a9c0d9e1c" />
     </td>
   </tr>
 </table>
+
 
 
 Das Projekt demonstriert saubere Component-Architektur, globales State-Handling, Routing-Struktur sowie UI-Design mit TailwindCSS und daisyUI.
@@ -184,3 +195,4 @@ Junior Full-Stack Developer
 
 - GitHub: https://github.com/Codenix-1349  
 - LinkedIn: https://linkedin.com/in/patrick-neumann-532367276  
+

@@ -1,11 +1,14 @@
 # 🛒 SuperDuper eCommerce  
 > Modern React E-Commerce Frontend mit Cart State Management & Theming
 
-![React](https://img.shields.io/badge/React-18-blue?logo=react)
-![Vite](https://img.shields.io/badge/Vite-4-purple?logo=vite)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?logo=tailwindcss)
-![daisyUI](https://img.shields.io/badge/daisyUI-UI_Framework-green)
-![Status](https://img.shields.io/badge/Status-Active-success)
+<p align="left">
+  <img alt="React" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg" />
+  <img alt="Vite" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vite.svg" />
+  <img alt="Tailwind CSS" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg" />
+  <img alt="DaisyUI" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/daisyui.svg" />
+  <img alt="React Router" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/reactrouter.svg" />
+</p>
+
 
 ---
 

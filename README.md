@@ -1,5 +1,5 @@
 # 🛒 SuperDuper eCommerce  
-> Modern React e-commerce frontend with persistent cart state, dynamic pricing and dark mode UI
+> Modern React e-commerce frontend with persistent cart state, external REST API integration and dark mode UI
 
 <p align="left">
   <img alt="React" title="React" height="32" style="margin-right:18px;" src="https://raw.githubusercontent.com/github/explore/main/topics/react/react.png" />
@@ -14,7 +14,7 @@
 
 **SuperDuper eCommerce** is a modern, responsive e-commerce frontend built with React and Vite.
 
-The project demonstrates clean component architecture, global state management, performance optimization, and UI design using TailwindCSS and daisyUI.
+The application consumes live product data from an external REST API (FakeStoreAPI) and demonstrates clean component architecture, global state management, performance optimization, and UI design using TailwindCSS and daisyUI.
 
 ---
 
@@ -50,7 +50,8 @@ The project demonstrates clean component architecture, global state management, 
 ## ✨ Features
 
 ### 🛍 Product System
-- Product grid with live API data (FakeStoreAPI)
+- Product grid powered by external REST API (FakeStoreAPI)
+- Asynchronous data fetching (async/await)
 - Category filtering (client-side)
 - Responsive card layout (TailwindCSS)
 - Dynamic price formatting (EUR)
@@ -116,7 +117,7 @@ The cart state is managed centrally inside `MainLayout` and distributed to child
 | Styling      | TailwindCSS |
 | UI Library   | daisyUI |
 | Routing      | React Router |
-| API          | FakeStoreAPI |
+| API          | FakeStoreAPI (REST) |
 | Language     | JavaScript (ES6+) |
 
 ---
@@ -152,6 +153,8 @@ http://localhost:5173
 ## 🎯 What This Project Demonstrates
 
 - React component architecture
+- External REST API integration
+- Asynchronous data handling
 - Global state management
 - Route-based code splitting
 - Performance optimization (useMemo)
@@ -163,7 +166,7 @@ http://localhost:5173
 ## 👨‍💻 Author
 
 Patrick Neumann  
-Junior Full-Stack Developer  
+Frontend-Focused Full-Stack Developer  
 
 - GitHub: https://github.com/Codenix-1349  
 - LinkedIn: https://linkedin.com/in/patrick-neumann-532367276  

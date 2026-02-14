@@ -2,12 +2,13 @@
 > Modern React E-Commerce Frontend mit Cart State Management & Theming
 
 <p align="left">
-  <img alt="React" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg" />
-  <img alt="Vite" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vite.svg" />
-  <img alt="Tailwind CSS" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg" />
-  <img alt="DaisyUI" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/daisyui.svg" />
-  <img alt="React Router" height="28" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/reactrouter.svg" />
+  <img alt="React" height="28" src="https://cdn.simpleicons.org/react/61DAFB" />
+  <img alt="Vite" height="28" src="https://cdn.simpleicons.org/vite/646CFF" />
+  <img alt="Tailwind CSS" height="28" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" />
+  <img alt="daisyUI" height="28" src="https://cdn.simpleicons.org/daisyui/5A0EF8" />
+  <img alt="React Router" height="28" src="https://cdn.simpleicons.org/reactrouter/CA4245" />
 </p>
+
 
 
 ---

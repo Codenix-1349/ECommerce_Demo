@@ -12,9 +12,9 @@
 
 ## 📖 Overview
 
-**SuperDuper eCommerce** ist ein modernes, responsives E-Commerce-Frontend, entwickelt mit React und Vite.
+**SuperDuper eCommerce** is a modern, responsive e-commerce frontend built with React and Vite.
 
-Das Projekt demonstriert saubere Component-Architektur, globales State-Handling, Performance-Optimierung sowie UI-Design mit TailwindCSS und daisyUI.
+The project demonstrates clean component architecture, global state management, performance optimization, and UI design using TailwindCSS and daisyUI.
 
 ---
 
@@ -50,30 +50,30 @@ Das Projekt demonstriert saubere Component-Architektur, globales State-Handling,
 ## ✨ Features
 
 ### 🛍 Product System
-- Produkt-Grid mit Live-Daten (FakeStoreAPI)
-- Kategorienfilter (Client-Side Filtering)
-- Responsive Card Layout (TailwindCSS)
-- Dynamische Preisformatierung (EUR)
-- Add-to-Cart mit sofortigem State-Update
+- Product grid with live API data (FakeStoreAPI)
+- Category filtering (client-side)
+- Responsive card layout (TailwindCSS)
+- Dynamic price formatting (EUR)
+- Add-to-cart with immediate state update
 
 ### 🛒 Cart System
-- Globaler Cart State (MainLayout + OutletContext)
-- Persistenter Warenkorb via LocalStorage
-- Artikel entfernen
-- Mengensteuerung (+ / -)
-- Dynamische Zeilensummen
-- Automatische Gesamtsumme
-- Cart Badge im Navbar
+- Global cart state (MainLayout + OutletContext)
+- Persistent cart via LocalStorage
+- Remove items
+- Quantity control (+ / -)
+- Dynamic line totals
+- Automatic total calculation
+- Cart badge in navbar
 
 ### 🌗 Theming
-- Dark / Light Mode Toggle
-- DaisyUI Theme Switching
+- Dark / Light mode toggle
+- DaisyUI theme switching
 
 ### ⚡ Performance & Architecture
 - Route-based code splitting (React.lazy + Suspense)
-- useMemo für optimierte Preisberechnungen
-- Saubere State-Architektur
-- Modularer Utility-Layer
+- useMemo for optimized price calculations
+- Clean state architecture
+- Modular utility layer
 
 ---
 
@@ -82,10 +82,10 @@ Das Projekt demonstriert saubere Component-Architektur, globales State-Handling,
 ```
 src/
 │
-├── components/       → UI Components
-├── pages/            → Route Pages
-├── layouts/          → Layout Structure
-├── utils/            → Business Logic
+├── components/       → UI components
+├── pages/            → Route pages
+├── layouts/          → Layout structure
+├── utils/            → Business logic
 │
 ├── App.jsx
 └── main.jsx
@@ -103,13 +103,13 @@ Pages (Home / Cart)
 Components
 ```
 
-Der Cart-State wird zentral im `MainLayout` verwaltet und über `OutletContext` an alle Child-Routen verteilt.
+The cart state is managed centrally inside `MainLayout` and distributed to child routes via `OutletContext`.
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer        | Technologie |
+| Layer        | Technology |
 |-------------|------------|
 | Frontend     | React 18 |
 | Bundler      | Vite |
@@ -140,23 +140,23 @@ http://localhost:5173
 
 ## 📦 Future Improvements
 
-- Produktdetailseite mit erweiterten Informationen
-- Echter Checkout Flow (PayPal / Stripe Backend)
-- Backend-Anbindung für Produktverwaltung
-- Authentication Layer (User Accounts)
+- Product detail page with extended information
+- Real checkout flow (PayPal / Stripe backend)
+- Backend integration for product management
+- Authentication layer (user accounts)
 - Testing (Vitest / React Testing Library)
-- CI / Deployment Setup (Vercel)
+- CI / deployment setup (Vercel)
 
 ---
 
 ## 🎯 What This Project Demonstrates
 
-- React Component Architecture
-- Global State Handling
-- Route-based Code Splitting
-- Performance Optimization (useMemo)
-- Persistente UI-State-Logik
-- Modern Tailwind Utility Workflow
+- React component architecture
+- Global state management
+- Route-based code splitting
+- Performance optimization (useMemo)
+- Persistent UI state logic
+- Modern Tailwind utility workflow
 
 ---
 

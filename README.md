@@ -6,8 +6,6 @@
   <img alt="Vite" title="Vite" height="32" style="margin-right:18px;" src="https://raw.githubusercontent.com/github/explore/main/topics/vite/vite.png" />
   <img alt="Tailwind CSS" title="Tailwind CSS" height="32" style="margin-right:18px;" src="https://raw.githubusercontent.com/github/explore/main/topics/tailwind/tailwind.png" />
   <img alt="JavaScript" title="JavaScript" height="32" style="margin-right:18px;" src="https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png" />
-  <img alt="HTML" title="HTML" height="32" style="margin-right:18px;" src="https://raw.githubusercontent.com/github/explore/main/topics/html/html.png" />
-  <img alt="CSS" title="CSS" height="32" style="margin-right:18px;" src="https://raw.githubusercontent.com/github/explore/main/topics/css/css.png" />
 </p>
 
 ---

@@ -2,12 +2,12 @@
 > Modern React E-Commerce Frontend mit Cart State Management & Theming
 
 <p align="left">
-  <img alt="React" height="28" src="https://raw.githubusercontent.com/github/explore/main/topics/react/react.png" />
-  <img alt="Vite" height="28" src="https://raw.githubusercontent.com/github/explore/main/topics/vite/vite.png" />
-  <img alt="Tailwind CSS" height="28" src="https://raw.githubusercontent.com/github/explore/main/topics/tailwind/tailwind.png" />
-  <img alt="JavaScript" height="28" src="https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png" />
-  <img alt="HTML" height="28" src="https://raw.githubusercontent.com/github/explore/main/topics/html/html.png" />
-  <img alt="CSS" height="28" src="https://raw.githubusercontent.com/github/explore/main/topics/css/css.png" />
+  <img alt="React" height="30" style="margin-right:10px; margin-bottom:8px;" src="https://raw.githubusercontent.com/github/explore/main/topics/react/react.png" />
+  <img alt="Vite" height="30" style="margin-right:10px; margin-bottom:8px;" src="https://raw.githubusercontent.com/github/explore/main/topics/vite/vite.png" />
+  <img alt="Tailwind CSS" height="30" style="margin-right:10px; margin-bottom:8px;" src="https://raw.githubusercontent.com/github/explore/main/topics/tailwind/tailwind.png" />
+  <img alt="JavaScript" height="30" style="margin-right:10px; margin-bottom:8px;" src="https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png" />
+  <img alt="HTML" height="30" style="margin-right:10px; margin-bottom:8px;" src="https://raw.githubusercontent.com/github/explore/main/topics/html/html.png" />
+  <img alt="CSS" height="30" style="margin-right:10px; margin-bottom:8px;" src="https://raw.githubusercontent.com/github/explore/main/topics/css/css.png" />
 </p>
 
 

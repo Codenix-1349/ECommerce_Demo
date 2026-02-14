@@ -1,5 +1,5 @@
 # 🛒 SuperDuper eCommerce  
-> Modern React E-Commerce Frontend mit Cart State Management & Theming
+> Modern React e-commerce frontend with persistent cart state, dynamic pricing and dark mode UI
 
 <p align="left">
   <img alt="React" title="React" height="32" style="margin-right:18px;" src="https://raw.githubusercontent.com/github/explore/main/topics/react/react.png" />
@@ -10,15 +10,14 @@
   <img alt="CSS" title="CSS" height="32" style="margin-right:18px;" src="https://raw.githubusercontent.com/github/explore/main/topics/css/css.png" />
 </p>
 
-
-
-
-
 ---
 
 ## 📖 Overview
 
 **SuperDuper eCommerce** ist ein modernes, responsives E-Commerce-Frontend, entwickelt mit React und Vite.
+
+Das Projekt demonstriert saubere Component-Architektur, globales State-Handling, Performance-Optimierung sowie UI-Design mit TailwindCSS und daisyUI.
+
 ---
 
 ## 🖼 UI Preview
@@ -48,43 +47,33 @@
   </tr>
 </table>
 
-
-
-Das Projekt demonstriert saubere Component-Architektur, globales State-Handling, Routing-Struktur sowie UI-Design mit TailwindCSS und daisyUI.
-
-Der Fokus liegt auf:
-
-- State Management
-- Component Reusability
-- Clean Architecture
-- UI/UX Struktur
-- Performance durch useMemo
-
 ---
 
 ## ✨ Features
 
 ### 🛍 Product System
-- Produkt-Grid mit API-Daten (FakeStoreAPI)
-- Kategorienfilter
-- Responsive Card Layout
-- Preisformatierung (EUR)
+- Produkt-Grid mit Live-Daten (FakeStoreAPI)
+- Kategorienfilter (Client-Side Filtering)
+- Responsive Card Layout (TailwindCSS)
+- Dynamische Preisformatierung (EUR)
+- Add-to-Cart mit sofortigem State-Update
 
 ### 🛒 Cart System
-- Globaler Warenkorb
+- Globaler Cart State (MainLayout + OutletContext)
+- Persistenter Warenkorb via LocalStorage
+- Artikel entfernen
 - Mengensteuerung (+ / -)
 - Dynamische Zeilensummen
 - Automatische Gesamtsumme
-- Cart-Badge im Navbar
-- OutletContext State Sharing
+- Cart Badge im Navbar
 
 ### 🌗 Theming
-- Dark / Light Mode
+- Dark / Light Mode Toggle
 - DaisyUI Theme Switching
-- Persistente UI-Struktur
 
-### ⚡ Performance
-- useMemo für optimierte Berechnungen
+### ⚡ Performance & Architecture
+- Route-based code splitting (React.lazy + Suspense)
+- useMemo für optimierte Preisberechnungen
 - Saubere State-Architektur
 - Modularer Utility-Layer
 
@@ -99,7 +88,6 @@ src/
 ├── pages/            → Route Pages
 ├── layouts/          → Layout Structure
 ├── utils/            → Business Logic
-├── context/          → (Optional Erweiterung)
 │
 ├── App.jsx
 └── main.jsx
@@ -137,26 +125,14 @@ Der Cart-State wird zentral im `MainLayout` verwaltet und über `OutletContext` 
 
 ## 🚀 Getting Started
 
-### 1. Clone Repository
-
 ```bash
 git clone https://github.com/Codenix-1349/ECommerce_Demo.git
 cd ECommerce_Demo
-```
-
-### 2. Install Dependencies
-
-```bash
 npm install
-```
-
-### 3. Start Dev Server
-
-```bash
 npm run dev
 ```
 
-Application runs at:
+Application runs on:
 
 ```
 http://localhost:5173
@@ -164,30 +140,32 @@ http://localhost:5173
 
 ---
 
+## 📦 Future Improvements
 
-## ✨ Features
+- Produktdetailseite mit erweiterten Informationen
+- Echter Checkout Flow (PayPal / Stripe Backend)
+- Backend-Anbindung für Produktverwaltung
+- Authentication Layer (User Accounts)
+- Testing (Vitest / React Testing Library)
+- CI / Deployment Setup (Vercel)
 
-### 🛍 Product System
-- Produkt-Grid mit API-Daten (FakeStoreAPI)
-- Kategorienfilter
-- Responsive Card Layout
-- Preisformatierung (EUR)
+---
 
-### 🛒 Cart System
-- Globaler Warenkorb (zentraler State im MainLayout)
-- Mengensteuerung (+ / -)
-- Artikel entfernen
-- Dynamische Zeilensummen
-- Automatische Gesamtsumme
-- Persistenter Warenkorb via LocalStorage
-- Cart-Badge im Navbar
+## 🎯 What This Project Demonstrates
 
-### 🌗 Theming
-- Dark / Light Mode
-- DaisyUI Theme Switching
+- React Component Architecture
+- Global State Handling
+- Route-based Code Splitting
+- Performance Optimization (useMemo)
+- Persistente UI-State-Logik
+- Modern Tailwind Utility Workflow
 
-### ⚡ Performance
-- useMemo für optimierte Berechnungen
-- Code Splitting via Vite
-- Saubere State-Architektur
-- Modularer Utility-Layer
+---
+
+## 👨‍💻 Author
+
+Patrick Neumann  
+Junior Full-Stack Developer  
+
+- GitHub: https://github.com/Codenix-1349  
+- LinkedIn: https://linkedin.com/in/patrick-neumann-532367276  

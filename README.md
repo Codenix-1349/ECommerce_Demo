@@ -164,35 +164,31 @@ http://localhost:5173
 
 ---
 
-## 📦 Future Improvements
+---
 
-- Persistenter Warenkorb via LocalStorage
-- Produktdetailseite
+## ✨ Features
+
+### 🛍 Product System
+- Produkt-Grid mit API-Daten (FakeStoreAPI)
+- Kategorienfilter
+- Responsive Card Layout
+- Preisformatierung (EUR)
+
+### 🛒 Cart System
+- Globaler Warenkorb (zentraler State im MainLayout)
+- Mengensteuerung (+ / -)
 - Artikel entfernen
-- Stripe / PayPal Integration (Backend)
-- Authentication Layer
-- Testing (Vitest)
-- Code Splitting
-- Deployment (Vercel)
+- Dynamische Zeilensummen
+- Automatische Gesamtsumme
+- Persistenter Warenkorb via LocalStorage
+- Cart-Badge im Navbar
 
----
+### 🌗 Theming
+- Dark / Light Mode
+- DaisyUI Theme Switching
 
-## 🎯 What This Project Demonstrates
-
-- React Component Architecture
-- State Lifting & Context Patterns
-- Performance Optimization (useMemo)
-- Clean Folder Structure
-- Tailwind Utility Workflow
-- Modern Frontend Tooling
-
----
-
-## 👨‍💻 Author
-
-Patrick Neumann  
-Junior Full-Stack Developer  
-
-- GitHub: https://github.com/Codenix-1349  
-- LinkedIn: https://linkedin.com/in/patrick-neumann-532367276  
-
+### ⚡ Performance
+- useMemo für optimierte Berechnungen
+- Code Splitting via Vite
+- Saubere State-Architektur
+- Modularer Utility-Layer

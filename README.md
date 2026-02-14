@@ -33,7 +33,7 @@
       <img width="900" alt="Home - Product overview" src="https://github.com/user-attachments/assets/1c2e6f05-77f0-4978-9926-309484362c5e" />
     </td>
     <td>
-      <img width="900" alt="Cart - Line totals and total" src="https://github.com/user-attachments/assets/13c24ec0-efe7-4ce9-b58b-f1fb0335886a" />
+      <img width="1898" height="935" alt="image" src="https://github.com/user-attachments/assets/292d225f-bfb2-4b54-816f-d457feaf39fb" />
     </td>
   </tr>
 </table>

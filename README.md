@@ -14,7 +14,7 @@
 
 **SuperDuper eCommerce** is a modern, responsive e-commerce frontend built with React and Vite.
 
-The application consumes live product data from an external REST API (FakeStoreAPI) and demonstrates clean component architecture, global state management, performance optimization, and UI design using TailwindCSS and daisyUI.
+The application consumes live product data from an external REST API (fakestoreapi.com) and demonstrates clean component architecture, global state management, performance optimization, and UI design using TailwindCSS and daisyUI.
 
 ---
 

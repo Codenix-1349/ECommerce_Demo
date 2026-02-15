@@ -1,4 +1,5 @@
-# 🛒 SuperDuper eCommerce  
+# 🛒 ECommerce_Demo
+  
 > Modern React e-commerce frontend with persistent cart state, external REST API integration and dark mode UI
 
 <p align="left">
@@ -12,7 +13,7 @@
 
 ## 📖 Overview
 
-**SuperDuper eCommerce** is a modern, responsive e-commerce frontend built with React and Vite.
+**ECommerce_Demo** is a modern, responsive e-commerce frontend built with React and Vite.
 
 The application consumes live product data from an external REST API (fakestoreapi.com) and demonstrates clean component architecture, global state management, performance optimization, and UI design using TailwindCSS and daisyUI.
 
